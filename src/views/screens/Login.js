@@ -1,8 +1,10 @@
+
 import React from "react"
-import {View ,Text, Image, TouchableOpacity,TextInput, StyleSheet,} from  "react-native";
+import {View ,Text, Image, TouchableOpacity,TextInput,  Pressable,} from  "react-native";
 
+import { StyleSheet } from 'react-native';
 
-export default function Login(){ 
+const Login = ({navigation}) => {
 
     return (
         
@@ -54,8 +56,27 @@ export default function Login(){
 
          placeholder='Password' />
           
+        <TouchableOpacity>
+        <Pressable onPress={() => navigation.navigate('OnBoardScreen')}>
+        <View > 
+            
+            <Text style={{
+                color: 'white', 
+                marginTop:10, 
+                fontWeight:"800", 
+                color:"grey", 
+                flexDirection:"row", 
+                alignItems:"center", 
+                backgroundColor: "#203931", 
+                padding:10, 
+                paddingHorizontal:80,
+                marginTop:20, 
+                borderRadius:10}}> Login</Text>
+            
+          </View> 
+             </Pressable>
         
-        <Text style={{marginTop:10, fontWeight:"500", color:"grey"}} > LOGIN </Text>
+        </TouchableOpacity>
         </TouchableOpacity>
              <TouchableOpacity>
         <Text style={{marginTop:10, fontWeight:"500", color:"grey"}} >
@@ -71,7 +92,7 @@ export default function Login(){
         
     
     
-   const styles = StyleSheet.create({
+      const   styles = StyleSheet.create({
        input: {
         borderWidth:1,
         borderColor: "black",
@@ -81,15 +102,4 @@ export default function Login(){
         borderRadius:10
        }
 });
-       
-
-
-    
-
-     
-    
-
-
-   
-   
-   
+export default Login;
